@@ -38,7 +38,5 @@
             </intent-filter>
         </receiver>
 
-        <activity android:name="com.trien.player.TempActivity"></activity>
-
     </application>
 </manifest>
