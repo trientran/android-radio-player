@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">radio-player</string>
+    <string name="no_stream">Radio station couldn\'t stream!</string>
+
+    <string name="radio_name">Fresh 92.7</string>
+    <string name="radio_url">your media URL</string>
+    <string name="notification_title">FM Radio</string>
+
+</resources>

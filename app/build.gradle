@@ -1,0 +1,45 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 28
+    defaultConfig {
+        applicationId "com.trien.radio_player"
+        minSdkVersion 19
+        targetSdkVersion 28
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    // to avoid the issue of the issue of the Java 1.8... >>> mismatching minsdk and exoPlayer library
+    compileOptions {
+        sourceCompatibility '1.8'
+        targetCompatibility '1.8'
+    }
+}
+
+dependencies {
+
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation 'androidx.appcompat:appcompat:1.0.2'
+    implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
+    implementation 'androidx.core:core:1.0.1'
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+    // Full exoplayer library. Need to add the below code snippet to the app level build.gradle to
+    // avoid the Bug "API mismatching minsdk support version":
+   /* compileOptions {
+        sourceCompatibility '1.8'
+        targetCompatibility '1.8'
+    }*/
+    implementation 'com.google.android.exoplayer:exoplayer:2.10.0'
+    // eventbus api for subscribing and un-subscribing events thru app cycles including services
+    implementation 'org.greenrobot:eventbus:3.0.0'
+}
+
+
